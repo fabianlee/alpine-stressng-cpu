@@ -1,4 +1,6 @@
 PROJECT := alpine-stressng
+## the number of processors is returned by nproc utility
+## can place better load if we know how many workers to use
 NPROC := $(shell nproc)
 
 clean:
