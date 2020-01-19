@@ -4,7 +4,8 @@ RUN apk update
 RUN apk add stress-ng
 
 # how many workers to start
-ENV nworkers=1
+# 0 means the count will match how many cpu are present
+ENV nworkers=0
 
 # how much load to put on processor (0=none,100=full load)
 ENV cpuload=50
