@@ -8,7 +8,7 @@ There are three env vars that can be overridden:
   * cpuload - 0=no load, 100=full cpu load
   * timeout - how many seconds to run test
 
-sudo docker run -it --cpus=1.0 -e nworkers=1 -e cpuload=50 -e timeout=20
+sudo docker run -it --cpus=1.0 -e nworkers=1 -e cpuload=50 -e timeout=20 alpine-stressng
 
 
 # Prerequisites
