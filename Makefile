@@ -1,15 +1,16 @@
-PROJECT := alpine-stressng
+PROJECT := alpine-stressng-cpu
 ## the number of processors is returned by nproc utility
 ## can place better load if we know how many workers to use
 NPROC := $(shell nproc)
+
+
+docker-build: 
+	sudo docker build -f Dockerfile -t $(PROJECT) .
 
 clean:
 	sudo docker stop $(PROJECT) >/dev/null 2>&1 | true
 	sudo docker rm $(PROJECT) >/dev/null 2>&1 | true
 	sudo docker image rm $(PROJECT) | true
-
-docker-build: 
-	sudo docker build -f Dockerfile -t $(PROJECT) .
 
 docker-rm:
 	## ignore errors when line begins with '-'
