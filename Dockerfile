@@ -1,7 +1,7 @@
 FROM alpine:latest
 
-RUN apk update
-RUN apk add stress-ng
+RUN apk update \
+	&& apk add stress-ng
 
 # how many workers to start
 # 0 means the count will match how many cpu are present
