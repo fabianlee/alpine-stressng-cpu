@@ -39,3 +39,6 @@ docker-run-halfcpu-100:
 docker-run-2cpu-pinned100:
 	sudo docker run -it --rm --cpus=2.0 --cpuset-cpus=0,1 -e cpuload=100 -e timeout=20 $(OPV)
 
+## pushes to docker hub
+docker-push:
+	sudo docker push $(OPV)
